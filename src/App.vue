@@ -1,26 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="fixed-headbar">
+    <div id="fixed-headbar-content">
+      <FixedHeadbar />
+    </div>
+  </div>
+
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FixedHeadbar from './components/head/FixedHeadBar.vue'
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
+    FixedHeadbar
+  },
+
+  data () {
+    return {
+      user: null
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+  #fixed-headbar {
+    position: relative;
+    height: 32px;
+    width: 100%;
+    background-color: #f2f2f2;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  #fixed-headbar-content {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    height: 24px;
+    min-width: 1000px;
+  }
 </style>
